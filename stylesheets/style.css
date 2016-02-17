@@ -612,6 +612,49 @@ body {
 .skip-link:focus {
   font-weight: 900; }
 
+.twitter, .facebook, .github, .award, .location, .glass, .mug, .world, .mail, .open-brakets, .close-brakets {
+  font-family: 'icon';
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  speak: none; }
+
+.twitter:before {
+  content: '\e900'; }
+
+.facebook:before {
+  content: '\e901'; }
+
+.github:before {
+  content: '\e90c'; }
+
+.award:before {
+  content: '\e903'; }
+
+.location:before {
+  content: '\e902'; }
+
+.glass:before {
+  content: '\e904'; }
+
+.mug:before {
+  content: '\e905'; }
+
+.world:before {
+  content: '\e906'; }
+
+.mail:before {
+  content: '\e909'; }
+
+.open-brakets:before {
+  content: '\e907'; }
+
+.close-brakets:before {
+  content: '\e908'; }
+
 #admin-menu {
   z-index: 9999; }
   #admin-menu a {
@@ -673,8 +716,8 @@ img {
 
 @font-face {
   font-family: 'icon';
-  src: url("../fonts/icon.eot");
-  src: url("../fonts/icon.eot?#iefix") format("embedded-opentype"), url("../fonts/icon.woff") format("woff"), url("../fonts/icon.ttf") format("truetype"), url("../fonts/icon.svg#icon") format("svg");
+  src: url("../fonts/dcft.eot");
+  src: url("../fonts/dcft.eot?#iefix") format("embedded-opentype"), url("../fonts/dcft.woff") format("woff"), url("../fonts/dcft.ttf") format("truetype"), url("../fonts/dcft.svg#dcft") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -692,6 +735,13 @@ a {
     text-decoration: underline; }
   a:focus {
     outline: dotted 2px #000000; }
+
+.icons li {
+  display: inline;
+  list-style: none;
+  font-size: 30px;
+  padding: .5em;
+  color: #74CDCD; }
 
 section {
   max-width: 900px;
