@@ -6,20 +6,11 @@ var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
 var jshint = require('gulp-jshint');
-var livereload = require('gulp-livereload');
+var browserSync = require('browser-sync').create();
 var browserify = require('browserify');
 var babelify = require('babelify');
 var notify = require('gulp-notify');
 var source = require('vinyl-source-stream');
-var gutil = require('gulp-util');
-var yargs = require('yargs');
-
-var runExpress = function() {
-  var express = require('express');
-  var app = express();
-  app.use(express.static('sass'));
-  app.listen(4000);
-};
 
 // Compile Sass, run autoprefixer, and create sourcemaps
 gulp.task('styles', function () {
@@ -37,7 +28,7 @@ gulp.task('styles', function () {
 
 // Lint JS
 gulp.task('lint', function() {
-  return gulp.src('js/es6/*.js')
+  return gulp.src('scripts/es6/*.js')
     .pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter('default'))
     .pipe(notify({ message: 'Linting complete' }));
@@ -45,7 +36,7 @@ gulp.task('lint', function() {
 
 // Browserify Scripts
 gulp.task('browserify', function() {
-  return browserify('js/es6/main.js', { debug: true })
+  return browserify('scripts/es6/main.js', { debug: true })
     .transform(babelify)
     .bundle()
     //Pass desired output filename to vinyl-source-stream
@@ -55,22 +46,24 @@ gulp.task('browserify', function() {
 });
 
 // Watch for changes
-gulp.task('watch', function() {
+gulp.task('watch', ['styles', 'browserify'], function() {
 
   // Watch .scss files
   gulp.watch('sass/**/*.scss', ['styles']);
 
   // Watch .js files
-  gulp.watch('js/es6/*.js', ['lint']);
-  gulp.watch('js/es6/*.js', ['browserify']);
+  gulp.watch('scripts/es6/*.js', ['lint']);
+  gulp.watch('scripts/es6/*.js', ['browserify']);
 
-  // Create LiveReload server
-  livereload.listen();
+  // Create Browsersync server
+  browserSync.init({
+    server: {
+      baseDir: "./"
+    }
+  });
 
-  // Watch any files in public/, reload on change
-  gulp.watch(['stylesheets', 'js']).on('change', livereload.changed);
-
-  runExpress();
+  // Watch any build files, reload on change
+  gulp.watch(['index.html', 'stylesheets/', 'js/']).on('change', browserSync.reload);
 });
 
 // Default task
