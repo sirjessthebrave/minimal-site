@@ -60,3 +60,80 @@
   -webkit-font-smoothing: antialiased;
   speak: none;
 }
+
+%twitter {
+  @extend %icon;
+  &:before{
+    content: '\e900';
+  }
+}
+
+%facebook{
+  @extend %icon;
+  &:before{
+    content: '\e901';
+  }
+}
+
+%github{
+  @extend %icon;
+  &:before{
+    content: '\e90c';
+  }
+}
+
+%award{
+  @extend %icon;
+  &:before{
+    content: '\e903';
+  }
+}
+
+%location{
+  @extend %icon;
+  &:before{
+    content: '\e902';
+  }
+}
+
+%glass{
+  @extend %icon;
+  &:before{
+    content: '\e904';
+  }
+}
+
+%mug{
+  @extend %icon;
+  &:before{
+    content: '\e905';
+  }
+}
+
+%world{
+  @extend %icon;
+  &:before{
+    content: '\e906';
+  }
+}
+
+%mail{
+  @extend %icon;
+  &:before{
+    content: '\e909';
+  }
+}
+
+%open-brackets{
+  @extend %icon;
+  &:before{
+    content: '\e907';
+  }
+}
+
+ %close-brackets{
+  @extend %icon;
+  &:before{
+    content: '\e908';
+  }
+}

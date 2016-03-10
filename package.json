@@ -1,30 +1,27 @@
 {
-  "name": "boom",
+  "name": "minimal",
   "version": "1.0.0",
-  "description": "Drupal 7 Starter Theme by RepEquity.",
+  "description": "Minimal site by @sirjessthebrave",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch": "gulp"
   },
   "repository": {
     "type": "git",
     "url": "git://github.com:repequity/boom.git"
   },
-  "author": "RepEquity",
+  "author": "Jessica Bell",
   "license": "ISC",
   "devDependencies": {
-    "gulp": "~3.9.0",
-    "gulp-sourcemaps": "~1.5.2",
-    "gulp-autoprefixer": "~3.0.1",
-    "gulp-sass": "~2.2.0",
-    "gulp-jshint": "~1.11.2",
-    "gulp-livereload": "~3.8.0",
-    "browserify": "~10.2.6",
     "babelify": "~6.3.0",
+    "browser-sync": "^2.11.1",
+    "browserify": "~10.2.6",
+    "gulp": "~3.9.0",
+    "gulp-autoprefixer": "~3.0.1",
+    "gulp-jshint": "~1.11.2",
     "gulp-notify": "~2.2.0",
-    "vinyl-source-stream": "~1.1.0",
-    "gulp-util": "~3.0.6",
-    "yargs": "~3.25.0",
-    "express": "~4.13.1"
+    "gulp-sass": "~2.2.0",
+    "gulp-sourcemaps": "~1.5.2",
+    "vinyl-source-stream": "~1.1.0"
   }
 }
